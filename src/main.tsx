@@ -15,6 +15,7 @@ import Home from './pages/Home.tsx';
 import Components from './pages/Components.tsx';
 import Hero from './pages/Hero.tsx';
 import Layout from './components/Layout.tsx';
+import TextReveal from './components/TextReveal.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,23 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
-        element: <Hero />,
+        index: true,
+        element: <Home />,
       },
+      {
+        path: "/components",
+        element: <Components />,
+        children : [
+          {
+            index: true,
+            element: <Hero />
+          },
+          {
+            path: "/components/text-reveal",
+            element: <TextReveal />
+          }
+        ]
+      }
     ]
 
   }

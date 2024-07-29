@@ -1,17 +1,18 @@
 import React from 'react'
 import { FcIdea } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <div className='hidden tablet:flex flex-col text-inter border-r bg-background w-[250px] sticky top-lg-nav left-0 h-[calc(100vh-3.2rem)] px-4 py-6   gap-[1rem] overflow-y-auto'>
         <div className='flex items-center gap-1 '>
             <FcIdea  className='text-[1.2rem]  mb-1'/>
-            <p className='font-medium text-primary'>Getting Started</p>
+            <p className='font-medium text-primary cursor-pointer'>Getting Started</p>
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Animations</h3>
             <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
-                <p>Text Reveal</p>
+                <Link to={'/components/text-reveal'}>Text Reveal</Link>
                 <p>Text Animation</p>
             </div>
         </div>
@@ -32,7 +33,7 @@ const Sidebar = () => {
             </div>
         </div>
         <div className='text-[0.95rem]'>
-            <h3 className='font-medium py-1 '>Data Display</h3>
+            <h3 className='font-medium py-1 '>Data display</h3>
             <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Grid</p>
                 <p>Gallery</p>
