@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text: #091512;
+    --background: #f7fdfc;
+    --primary: #42d7bb;
+    --secondary: #78edd9;
+    --accent: #51f6d8;
+  }
+  .dark {
+    --text: #eaf6f3;
+    --background: #020807;
+    --primary: #28bda2;
+    --secondary: #128773;
+    --accent: #09ae90;
+  }
+},
+
+
+:root {
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  border-box: box-sizing;
+}
+
