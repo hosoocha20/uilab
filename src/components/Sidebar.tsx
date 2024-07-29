@@ -19,17 +19,14 @@ const Sidebar = () => {
             <h3 className='font-medium py-1 '>Transitions</h3>
             <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Page Transition</p>
+                <p>Page Loaders</p>
             </div>
         </div>
         <div className='text-[0.95rem]'>
-            <h3 className='font-medium py-1 '>Menu</h3>
+            <h3 className='font-medium py-1 '>Menus & Navbars</h3>
             <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Menu Bar</p>
-            </div>
-        </div>
-        <div className='text-[0.95rem]'>
-            <h3 className='font-medium py-1 '>Navigation</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+                <p>Dropdown Menu</p>
                 <p>Fullscreen Navbar</p>
                 <p>Responsive Navbar</p>
             </div>
@@ -41,6 +38,22 @@ const Sidebar = () => {
                 <p>Gallery</p>
                 <p>Card</p>
                 <p>Wheel</p>
+            </div>
+        </div>
+        <div className='text-[0.95rem]'>
+            <h3 className='font-medium py-1 '>Elements</h3>
+            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+                <p>Buttons</p>
+                <p>Inputs</p>
+                <p>Links</p>
+                <p>Notifications</p>
+            </div>
+        </div>
+        <div className='text-[0.95rem]'>
+            <h3 className='font-medium py-1 '>Other Elements</h3>
+            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+                <p>Mouse Scroll</p>
+                <p>Loaders</p>
             </div>
         </div>
     </div>
