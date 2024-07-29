@@ -16,8 +16,7 @@ export default {
         'lg-p' : '2rem',
       },
       fontFamily: {
-        'Inter': 'sans-serif',
-        'Josefin Sans' : 'sans-serif'
+        'inter': ['Inter', 'sans-serif'],
       },
       colors: {
         'text': 'var(--text)',
