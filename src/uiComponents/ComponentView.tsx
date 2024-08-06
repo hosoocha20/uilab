@@ -8,41 +8,13 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 interface Props {
   component: React.ComponentType<{ className?: string }>;
   header: string;
+  name: string;
+  codeString: string
 }
 const ComponentView = (props: Props) => {
   const [toggleView, setToggleView] = useState(true);
   const controls = useAnimationControls();
-  const codeString = `import { motion, Variants } from "framer-motion";
-import React from "react";
 
-export const TextRevealUp = () => {
-  const textRevealUp: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 25,
-      clipPath: "polygon(0% 100%,100% 100%,100% 100%,0% 100%)",
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        clipPath: "polygon(0% 100%,100% 100%,100% 0%,0% 0%)",
-      transition: { duration: 0.5, staggerChildren: 0.15, ease: "easeOut" },
-    },
-  };
-  return (
-    <div className="font-inter h-[300px] border rounded-[10px] flex items-center justify-center bg-black">
-      <motion.div
-        variants={textRevealUp}
-        initial="hidden"
-        whileInView="visible"
-        className="relative  text-[3rem] font-bold  text-[#EAF6F3]"
-      >
-        <motion.p variants={textRevealUp}>Hello,</motion.p>
-        <motion.p variants={textRevealUp}>Welcome to <span className="text-primary">UiLab</span></motion.p>
-      </motion.div>
-    </div>
-  );
-};`;
 
   const buttonVariants: Variants = {
     code1: {
@@ -106,7 +78,7 @@ export const TextRevealUp = () => {
     <div>
       <div className="font-inter flex items-center justify-between py-2">
         <h3 className="font-semibold text-text text-[1.2rem]">
-          {props.header}
+          {props.name}
         </h3>
         <div className="border border-seashell-950 bg-seashell-950 flex py-[0.15rem] px-[0.18rem] rounded-[1.2rem]">
           <div className="flex relative rounded-[1rem] overflow-hidden">
@@ -142,7 +114,7 @@ export const TextRevealUp = () => {
       {toggleView ? (
         <props.component />
       ) : (
-        <CodeSyntax codeString={codeString} />
+        <CodeSyntax codeString={props.codeString} header={props.header}/>
       )}
     </div>
   );

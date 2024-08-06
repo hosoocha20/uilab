@@ -6,7 +6,8 @@ import { IoLogoReact } from "react-icons/io5";
 import { RxCopy } from "react-icons/rx";
 
 interface Props{
-    codeString : string
+    codeString : string;
+    header: string;
 }
 const CodeSyntax = (props: Props) => {
   const codeString = `import React from 'react'\nimport { motion } from 'framer-motion'\ninterface Props{\n\tchildren: JSX.Element;\n\tlassName?: string;
@@ -45,7 +46,7 @@ const CodeSyntax = (props: Props) => {
         <div className="w-fit flex items-center px-3 py-1 border-r border-[rgb(126,120,135)] gap-2">
           <IoLogoReact className="text-[#61dbfb]" />
           <div className="w-fit  text-[0.82rem] tracking-wider text-white">
-            TextReveal.tsx
+            {props.header}.tsx
           </div>
         </div>
       </div>
