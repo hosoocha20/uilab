@@ -11,9 +11,9 @@ const Sidebar = () => {
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Animations</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <Link to={'/components/text-reveal'}>Text Reveal</Link>
-                <p>Text Animation</p>
+                <Link to={'/components/text-animation'}>Text Animation</Link>
             </div>
         </div>
         <div className='text-[0.95rem]'>

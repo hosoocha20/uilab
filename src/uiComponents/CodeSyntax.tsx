@@ -1,11 +1,14 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { qtcreatorDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoLogoReact } from "react-icons/io5";
 import { RxCopy } from "react-icons/rx";
 
-const CodeSyntax = () => {
+interface Props{
+    codeString : string
+}
+const CodeSyntax = (props: Props) => {
   const codeString = `import React from 'react'\nimport { motion } from 'framer-motion'\ninterface Props{\n\tchildren: JSX.Element;\n\tlassName?: string;
         once? : false | boolean;
     }
@@ -28,10 +31,8 @@ const CodeSyntax = () => {
     }
     export default TextReveal`;
   const customStyle = {
-    fontSize: "0.9rem",
-    borderRadius: "0 0 10px 10px",
     backgroundColor: "#292929",
-    maxHeight: "500px",
+    
   };
   return (
     <div>
@@ -56,16 +57,17 @@ const CodeSyntax = () => {
           
         </button>
         <SyntaxHighlighter
-          language="typescript"
+          language="tsx"
           showLineNumbers
           wrapLongLines={true}
-          useInlineStyles={false}
+          customStyle={customStyle}
+          style={oneDark}
           className={
             "syntax-highlighter bg-seashell-950 text-[0.9rem] max-h-[400px] overflow-y-auto"
           }
           id="syntax-style"
         >
-          {codeString}
+          {props.codeString}
         </SyntaxHighlighter>
       </div>
     </div>

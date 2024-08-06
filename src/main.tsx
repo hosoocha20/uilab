@@ -16,6 +16,7 @@ import Components from './pages/Components.tsx';
 import Hero from './pages/Hero.tsx';
 import Layout from './components/Layout.tsx';
 import TextReveal from './components/TextReveal.tsx';
+import TextAnimation from './components/TextAnimation.tsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
           {
             path: "/components/text-reveal",
             element: <TextReveal />
+          },
+          {
+            path: "/components/text-animation",
+            element: <TextAnimation />
           }
         ]
       }
