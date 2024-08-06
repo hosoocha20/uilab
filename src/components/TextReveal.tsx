@@ -2,6 +2,7 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { qtcreatorDark} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CodeSyntax from "../uiComponents/CodeSyntax";
+import ComponentView from "../uiComponents/ComponentView";
 
 const TextReveal = () => {
   const codeString = 
@@ -37,7 +38,7 @@ export default TextReveal`;
     <div className="font-inter  flex-1 min-w-[calc(100vw-250px)] bg-background flex justify-center pt-6 pb-[5rem] px-[3rem] text-text">
         <div className=" w-[1200px] max-w-full  flex flex-col gap-[2.5rem]">
             <h1>Text Reveal</h1>
-                <CodeSyntax />
+            <ComponentView />
         </div>
     </div>
   );

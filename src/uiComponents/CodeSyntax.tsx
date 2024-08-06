@@ -35,9 +35,6 @@ const CodeSyntax = () => {
   };
   return (
     <div>
-      <div className="border">
-        <h2>Text Reveal 1</h2>
-      </div>
       <div className=" w-full  flex gap-2  px-4 py-2  bg-seashell-950 rounded-t-[10px]">
         <div className="bg-[#ff605c] w-3 h-3 rounded-full"></div>
         <div className="bg-[#ffbd44] w-3 h-3 rounded-full"></div>
