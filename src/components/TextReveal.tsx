@@ -3,7 +3,7 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 import { qtcreatorDark} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CodeSyntax from "../uiComponents/CodeSyntax";
 import ComponentView from "../uiComponents/ComponentView";
-import { StaggeredTextRevealUp, TextRevealUp, TextSlideUp, TextZoomInUp } from "../uiComponents/TextRevealComponents";
+import { StaggeredTextRevealUp, TextRevealUp, TextSlideUp, TextZip, TextZoomInUp } from "../uiComponents/TextRevealComponents";
 
 const TextReveal = () => {
   const codeString = 
@@ -226,7 +226,97 @@ export const TextZoomInUp = () => {
     </div>
   );
 };'/>
-       
+            <ComponentView component={TextZip} name="Text Zip" header="TextZip" codeString='import { motion, Variants } from "framer-motion";
+export const TextZip = () => {
+  const variants: Variants = {
+    hidden: {
+      opacity: 1,
+    },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.5, staggerChildren: 0.05, ease: "easeOut" },
+    },
+  };
+
+  const downVariant: Variants = {
+    hidden: {
+      y: "-100%",
+    },
+    visible: {
+      y: 0,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    },
+  };
+  const upVariant: Variants = {
+    hidden: {
+      y: "100%",
+    },
+    visible: {
+      y: 0,
+      transition: { duration: 0.2, ease: "easeInOut" },
+    },
+  };
+  const text = "Limitless";
+  const text2 = "Horizons";
+  return (
+    <div className="font-inter h-[300px] border rounded-[10px] flex items-center gap-4 justify-center bg-[#5965f5] overflow-y-auto text-white text-[3rem] font-extrabold">
+      <p>Explore: </p>
+      <motion.div
+        variants={variants}
+        initial={"hidden"}
+        whileInView={"visible"}
+        className="  overflow-hidden"
+      >
+        {text.split("").map((char: string, i: number) =>
+          i % 2 === 0 ? (
+            <motion.span
+              key={i}
+              variants={downVariant}
+              className="inline-block leading-tight"
+            >
+              {char}
+            </motion.span>
+          ) : (
+            <motion.span
+              key={i}
+              variants={upVariant}
+              className="inline-block leading-tight"
+            >
+              {char}
+            </motion.span>
+          )
+        )}
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial={"hidden"}
+        whileInView={"visible"}
+        className=" overflow-hidden"
+      >
+        {text2.split("").map((char: string, i: number) =>
+          i % 2 === 0 ? (
+            <motion.span
+              key={i}
+              variants={downVariant}
+              className="inline-block leading-tight"
+            >
+              {char}
+            </motion.span>
+          ) : (
+            <motion.span
+              key={i}
+              variants={upVariant}
+              className="inline-block leading-tight"
+            >
+              {char}
+            </motion.span>
+          )
+        )}
+      </motion.div>
+    </div>
+  );
+};'/>
+            
         </div>
     </div>
   );
