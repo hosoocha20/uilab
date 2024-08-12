@@ -5,33 +5,38 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoLogoReact } from "react-icons/io5";
 import { RxCopy } from "react-icons/rx";
 import { BsClipboard2Check } from "react-icons/bs";
+import { motion, useAnimationControls, Variants } from "framer-motion";
 
 interface Props{
     codeString : string;
     header: string;
 }
 const CodeSyntax = (props: Props) => {
-  const codeString = `import React from 'react'\nimport { motion } from 'framer-motion'\ninterface Props{\n\tchildren: JSX.Element;\n\tlassName?: string;
-        once? : false | boolean;
+
+  const controls = useAnimationControls();
+
+    const variants : Variants = {
+        show: {
+            opacity: 1,
+            y: "-0.2rem",
+            transition: {duration: 0.3, ease: "easeOut"}
+        },
+        hide: {
+            opacity: 0,
+            y: "-0.4rem",
+            transition: {duration: 0.3, ease: "easeOut", delay: 3}
+        },
+        initial: {
+            opacity: 0,
+            y: "0"
+        }
     }
-    
-    const TextReveal = (props: Props) => {
-        return (
-            <motion.div 
-                variants={{hidden: {opacity: 0, y: 25, clipPath:'polygon(0% 100%,100% 100%,100% 100%,0% 100%)'}, 
-                visible: {opacity:1, y:0, clipPath:'polygon(0% 100%,100% 100%,100% 0%,0% 0%)'}}}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: props.once}}
-                transition={{duration: 0.6, delay: 0.2, ease: "easeOut"}}
-                className={${(<code>`</code>)}relative  "$"{props.className} ${(
-    <code>`</code>
-  )}}>
-                {props.children}
-                </motion.div>
-        )
+
+    const showPopUp = async () =>{
+        await controls.start("show");
+        await controls.start("hide");
+        controls.set("initial")
     }
-    export default TextReveal`;
   const customStyle = {
     backgroundColor: "#292929",
     
@@ -52,15 +57,15 @@ const CodeSyntax = (props: Props) => {
         </div>
       </div>
       <div className="syntax-container relative py-2 bg-seashell-950 rounded-b-[10px]">
-        <button className="absolute top-2 right-6 text-white p-3 rounded-md bg-seashell-800 hover:bg-seashell-600 transition-[background-color] duration-200 ease-in-out">
-            <CopyToClipboard text={codeString} onCopy={() => alert("Copied!")}>
+        <button className="absolute top-2 right-6 text-white p-3 rounded-md bg-seashell-800 hover:bg-seashell-600 transition-[background-color] duration-200 ease-in-out" onClick={() => showPopUp()}>
+            <CopyToClipboard text={props.codeString} >
                 <RxCopy />
             </CopyToClipboard>
         </button>
-        <div className="absolute top-[-2.5rem] right-6  text-white p-3 flex gap-2 items-center bg-seashell-800 rounded-md">
+        <motion.div variants={variants} animate={controls} initial={"initial"} className="absolute top-[-2.4rem] right-6  text-white p-3 flex gap-2 items-center bg-seashell-800 rounded-md">
             <BsClipboard2Check className="text-[1.1rem]"/>
             <p className="text-[0.8rem]">Copied to clipboard</p>
-        </div>
+        </motion.div>
         <SyntaxHighlighter
           language="tsx"
           showLineNumbers
