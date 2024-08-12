@@ -17,6 +17,7 @@ import Hero from './pages/Hero.tsx';
 import Layout from './components/Layout.tsx';
 import TextReveal from './components/TextReveal.tsx';
 import TextAnimation from './components/TextAnimation.tsx';
+import MenuIcons from './components/MenuIcons.tsx';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
           {
             path: "/components/text-animation",
             element: <TextAnimation />
-          }
+          },
+          {
+            path: "/components/menu-icons",
+            element: <MenuIcons />
+          },
         ]
       }
     ]

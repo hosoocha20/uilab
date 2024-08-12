@@ -27,6 +27,7 @@ const Sidebar = () => {
             <h3 className='font-medium py-1 '>Menus & Navbars</h3>
             <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Menu Bar</p>
+                <Link to={'/components/menu-icons'}>Menu Icons</Link>
                 <p>Dropdown Menu</p>
                 <p>Fullscreen Navbar</p>
                 <p>Responsive Navbar</p>

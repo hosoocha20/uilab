@@ -4,6 +4,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { IoLogoReact } from "react-icons/io5";
 import { RxCopy } from "react-icons/rx";
+import { BsClipboard2Check } from "react-icons/bs";
 
 interface Props{
     codeString : string;
@@ -55,8 +56,11 @@ const CodeSyntax = (props: Props) => {
             <CopyToClipboard text={codeString} onCopy={() => alert("Copied!")}>
                 <RxCopy />
             </CopyToClipboard>
-          
         </button>
+        <div className="absolute top-[-2.5rem] right-6  text-white p-3 flex gap-2 items-center bg-seashell-800 rounded-md">
+            <BsClipboard2Check className="text-[1.1rem]"/>
+            <p className="text-[0.8rem]">Copied to clipboard</p>
+        </div>
         <SyntaxHighlighter
           language="tsx"
           showLineNumbers
