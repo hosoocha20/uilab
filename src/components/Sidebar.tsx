@@ -18,24 +18,24 @@ const Sidebar = () => {
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Transitions</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Page Transition</p>
                 <p>Page Loaders</p>
             </div>
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Menus & Navbars</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
-                <p>Menu Bar</p>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <Link to={'/components/menu-icons'}>Menu Icons</Link>
                 <p>Dropdown Menu</p>
+                <Link to={'/components/menus'}>Menus</Link>
+                <Link to={'/components/navbars'}>Navbars</Link>
                 <p>Fullscreen Navbar</p>
-                <p>Responsive Navbar</p>
             </div>
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Data display</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Grid</p>
                 <p>Gallery</p>
                 <p>Card</p>
@@ -44,7 +44,7 @@ const Sidebar = () => {
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Elements</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Buttons</p>
                 <p>Inputs</p>
                 <p>Links</p>
@@ -53,7 +53,7 @@ const Sidebar = () => {
         </div>
         <div className='text-[0.95rem]'>
             <h3 className='font-medium py-1 '>Other Elements</h3>
-            <div className='  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
+            <div className='flex flex-col  *:py-1 *:pl-3 *:border-l hover:*:border-turquoise-400 *:cursor-pointer'>
                 <p>Mouse Scroll</p>
                 <p>Loaders</p>
             </div>

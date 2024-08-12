@@ -18,6 +18,8 @@ import Layout from './components/Layout.tsx';
 import TextReveal from './components/TextReveal.tsx';
 import TextAnimation from './components/TextAnimation.tsx';
 import MenuIcons from './components/MenuIcons.tsx';
+import Navbars from './components/Navbars.tsx';
+import Menus from './components/Menus.tsx';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
           {
             path: "/components/menu-icons",
             element: <MenuIcons />
+          },
+          {
+            path: "/components/navbars",
+            element: <Navbars />
+          },
+          {
+            path: "/components/menus",
+            element: <Menus />
           },
         ]
       }
